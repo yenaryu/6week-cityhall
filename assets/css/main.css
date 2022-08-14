@@ -1,0 +1,964 @@
+
+/* 메인슬라이드+배너3 */
+.group-main{display: flex; justify-content: space-between;
+overflow: hidden;}
+
+/* 메인슬라이드 */
+.sc-visual {
+    width: 770px;
+    position: relative;
+}
+
+/* 주요뉴스/시민참여 전체 */
+.sc-visual .group-visual {
+
+    margin: 0 0 0 80px;
+}
+
+/* 왼쪽 버튼 */
+.sc-visual .group-visual .visual-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 175px;
+    font-weight: 700;
+}
+
+/* 하늘색(기본) */
+.sc-visual .visual-title {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-top: 110px;
+    background-color: #d2e1e9;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* 파란색(Active) */
+.sc-visual .visual-title.active {
+    background-color: #0158a8;
+    color: #fff;
+}
+.sc-visual .visual-title.active::after {
+    content: " ";
+    position: absolute;
+    z-index: 10;
+    left: 99%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 25px 0 25px 32px;
+    border-color: transparent transparent transparent #0158a8;
+    margin-top: -25px;
+}
+
+
+/* 주요뉴스 로고 */
+.sc-visual .group-visual .impnws::before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    top: 50px; left: 50%; transform: translateX(-50%);/* 위치임의조정 */ 
+}
+
+/* 시민참여 로고 */
+.sc-visual .group-visual .citizen::before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-position: -50px 0px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    position: absolute;
+    top: 50px; left: 50%; transform: translateX(-50%);/* 위치임의조정 */ 
+}
+
+/* 메인화면 */
+.sc-visual .swiper-container{display: none;
+    position: absolute;
+    top: 0;
+    left: 80px;}
+.sc-visual .swiper-container.active{display: block;}
+
+.sc-visual .swiper-wrapper{display: flex; 
+    max-width: 100%;
+    width: 7215%;
+    height: 350px;
+    position: relative;
+    box-sizing: content-box;}
+
+.sc-visual .swiper-container .swiper-slide {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 690px;
+    background: #fff;
+}
+
+/* 이미지+하단 */
+.sc-visual .swiper-slide .main-img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+}
+
+.sc-visual .swiper-slide img{
+    min-width: 100%;
+    display: block;
+
+}
+
+.sc-visual .main-txt {
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    padding-right: 122px;
+    background-color: rgba(0,0,0,.7);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+
+/* 버튼전체 */
+.sc-visual .move-btn {
+    position: absolute;
+    right: 3px;
+    bottom: 4px;
+    width: 110px;
+    height: 32px;
+    color: #fff;
+} 
+.sc-visual .move-btn::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: 66px;
+    width: 1px;
+    height: 24px;
+    background: rgba(255,255,255,.5);
+}
+
+/* 숫자 */
+.sc-visual .btn-num{position: absolute;
+    right: 80px;
+    top: 50%;
+    width: auto;
+    transform: translateY(-50%);
+    overflow: hidden;
+    text-align: right;}
+.sc-visual .btn-num .count{color: #fff;
+    letter-spacing: 0;
+    font-size: 13px;}
+.sc-visual .btn-num .total{color: #fff;
+    letter-spacing: 0;
+    font-size: 13px;}
+
+/* 버튼 */
+
+.sc-visual .group-visual .btn-nav{
+   position: absolute;
+    bottom: 11px;
+    width: 18px;
+    height: 18px;
+    margin-top: 0;
+    z-index: 10;
+    cursor: pointer;
+    display: block;
+    color: transparent;
+    opacity: 1;
+    top: 50%;
+}
+
+
+.sc-visual .btn-nav.prev {
+    left: 49px;
+    background-position: -241px -285px;
+}
+
+
+.sc-visual .btn-nav.pause {
+    background-position: -269px -285px;
+    position: absolute;
+    top: 50%;
+    left: auto;
+    right: 22px;
+    z-index: 10;
+}
+.sc-visual .btn-nav.next {
+position: absolute;
+top: 50%;
+    right: 5px;
+    background-position: -256px -285px;
+}
+
+
+/* 배너3 */
+.group-banner{width: 360px;
+    height: 350px;
+    position: relative;}
+.sc-banner{    }
+.sc-banner.covid{position: relative;
+    width: 100%;
+    height: 98px;
+    margin-bottom: 7px;
+    overflow: hidden;}
+.sc-banner.covid .bnr-covid{height: 98px; width: 100%; display: block;
+}
+
+.sc-banner.covid .bnr-covid img{position: relative;
+    width: 100%;
+    height: 98px;
+    margin-bottom: 7px;
+    overflow: hidden;
+}
+
+.sc-banner.covid .bnr-covid .covid-date{    
+    position: absolute;
+    padding-top: 0;
+    top: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 25px;
+    color: #000;
+    left: initial;
+    right: 20px;
+    letter-spacing: -0.05em;
+    height: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: -0.075em;
+}
+.sc-banner.covid .bnr-covid .covid-box{position: absolute;
+    top: 95px;
+    width: 130px;
+    height: 26px;
+    text-align: center;}
+.sc-banner.covid .bnr-covid .covid-box.new{
+    top: 32px;
+    width: 105px;
+    height: 58px;
+    margin-left: 20px;}
+.sc-banner.covid .bnr-covid .covid-txt{font-size: 13px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: -0.075em;
+    }
+.sc-banner.covid .bnr-covid .covid-num{display: block;
+    font-size: 17px;
+    margin-top: 2px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: -0.075em;}
+.sc-banner.covid .bnr-covid .covid-box.pre{top: 32px;
+    width: 105px;
+    height: 58px;
+    margin-left: 127px;}
+.sc-banner.covid .bnr-covid .covid-box.sum{top: 32px;
+    width: 110px;
+    height: 58px;
+    margin-left: 230px;}
+.sc-banner.covid span{display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.075em;
+    padding-top: 2px;}
+
+/* 서울시장 */
+.sc-banner.mayor{position: relative;
+    margin-top: 7px;}
+.sc-banner.mayor .bnr-mayor{display: block;}
+.sc-banner.mayor .bnr-mayor img{}
+.sc-banner.mayor .mayor-link a{bottom: 12px; position: absolute;}
+.sc-banner.mayor .mayor-link .link1{left: 130px;}
+.sc-banner.mayor .mayor-link .link1 img{}
+.sc-banner.mayor .mayor-link .link2{left: 237px;}
+.sc-banner.mayor .mayor-link .link2 img{}
+
+
+/* 주요서비스 */
+.sc-service {
+    padding-top: 50px;
+    position: relative;
+}
+.sc-service .h2-title {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dbdbdb;
+}
+/* 버튼 */
+.sc-service .link-zip {
+    width: 112px;
+    height: 29px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: block;
+    font-size: 15px;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    padding-left: 13px;
+    line-height: 28px;
+    background: url(../image/icon-nuri.png) no-repeat right 13px top 50%;
+}
+
+/* 하단 */
+.sc-service .sort-list {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.sc-service .sort-list .sort-item .sort-txt::before{content: '';
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 10px;}
+.sc-service .sort-list .reserv .sort-txt::before{background-position: -360px 0;}
+.sc-service .sort-list .respon .sort-txt::before{background-position: 0 0;}
+.sc-service .sort-list .job .sort-txt::before{background-position: -120px 0;}
+.sc-service .sort-list .estate .sort-txt::before{background-position: -300px 0;}
+.sc-service .sort-list .life .sort-txt::before{background-position: -180px 0;}
+.sc-service .sort-list .welf .sort-txt::before{background-position: -960px 0;}
+.sc-service .sort-list .house .sort-txt::before{background-position: -780px 0;}
+.sc-service .sort-list .youth .sort-txt::before{background-position: -1140px 0;}
+.sc-service .sort-list .hand .sort-txt::before{background-position: -1020px 0;}
+.sc-service .sort-list .democr .sort-txt::before{background-position: -60px 0;}
+.sc-service .sort-list .city .sort-txt::before{background-position: -600px 0;}
+
+
+/* 코로나 */
+.sc-covid {
+    margin-top: 35px;
+    background: #eff4f8;
+}
+.sc-covid .covid-list {
+    /* overflow: hidden; */
+    display: flex;
+    justify-content: space-between;
+}
+.sc-covid .covid-item {
+    width: 288px;
+    padding: 20px 0;
+}
+.sc-covid .covid-item .covid-img{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.sc-covid .covid-img + .covid-img::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 0px;
+    width: 1px;
+    height: 60px;
+    background: #dbdbdb;
+}
+.sc-covid .covid-img img{width: 288px;height: 70px;}
+
+
+/* 이벤트 */
+.group-detail {
+    padding: 50px 0 50px;
+    border-bottom: 2px solid #222222;
+    display: flex;
+    justify-content: space-between;
+}
+.sc-event {
+    position: relative;
+}
+.sc-festival{margin: 0 36px;
+position: relative;}
+
+.group-detail > section {
+    width: 360px;
+}
+.group-detail > section .h2-title {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #dbdbdb;
+    font-weight: bold;
+}
+.event-group .detail-list .detail-item {
+    padding: 6px 0 6px 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block; 
+}
+.event-group .detail-list .type {
+    font-size: 15px; 
+    margin: 0 9px 0 0;
+}
+.event-group .detail-list .type.welf {
+    color: #d76000;
+}
+.event-group .detail-list .type.hous {
+    color: #c35c3c;
+}
+.event-group .detail-list .type.cult {
+    color: #9b64d3;
+}
+.event-group .detail-list .type.eco {
+    color: #599100;
+}
+.event-group .detail-list .detail-text {
+    font-size: 15px;
+    color:#222;
+}
+.event-group .link-more {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ddd;
+    background-position: -1px -1px;
+}
+
+
+
+/* 자주찾은 서비스 */
+.sc-often .h2-title {
+    margin-bottom: 0; border-bottom: 0;
+}
+.sc-often .often-list {
+    padding: 17px 5px 7px 20px;
+    background: #eff4f8;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.sc-often .often-item {
+    width: 50%;
+    position: relative;
+    padding: 0 0 10px 10px;
+    box-sizing: border-box;
+}
+.sc-often .often-item::before {
+    content: '';
+    position: absolute;
+    background: #666666;
+    width: 2px;
+    height: 2px;
+    left: 0;
+    top: 50%;
+    margin-top: -6px;
+}
+.sc-often .often-item .often-text {
+    display: block;
+    width: 94%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    color: #333;
+}
+
+
+/* 분야별 정보 */
+.sc-info {
+    height: 145px;
+    padding-top: 40px;
+}
+.sc-info .h2-title {
+    padding: 0 0 20px 0;
+}
+.sc-info .info-list {
+    padding: 0 27px;
+    margin-left: -59px;
+    box-sizing: border-box;
+    display: flex;
+}
+.sc-info .info-item {
+    width: 85px;
+    height: 145px;
+    margin-left: 59px;
+    position: relative;
+}
+.sc-info .info-item::before{
+    content: '';
+    display: block;
+    width: 85px;
+    height: 85px;
+}
+.sc-info .info-item.hous::before {
+    background: url(../image/icon-info1.png) no-repeat;
+}
+.sc-info .info-item.econ::before {
+    background: url(../image/icon-info2.png) no-repeat;
+}
+.sc-info .info-item.traf::before {
+    background: url(../image/icon-info3.png) no-repeat;
+}
+.sc-info .info-item.eco::before {
+    background: url(../image/icon-info4.png) no-repeat;
+}
+.sc-info .info-item.welf::before {
+    background: url(../image/icon-info5.png) no-repeat;
+}
+.sc-info .info-item.safe::before {
+    background: url(../image/icon-info6.png) no-repeat;
+}
+.sc-info .info-item.cult::before {
+    background: url(../image/icon-info7.png) no-repeat;
+}
+.sc-info .info-item.admin::before {
+    background: url(../image/icon-info8.png) no-repeat;
+}
+.sc-info .info-item .info-text {
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 100px;
+    top: 0;
+    left: 0;
+}
+
+
+/* 새소식 */
+.group-newnews {
+    padding: 20px 0 30px;
+    position: relative;
+    clear: both;
+}
+.group-newnews .h2-title {
+    padding: 60px 0 30px; /* 위치임의지정 */
+}
+.group-newnews .link-all{ position: absolute;
+    top: 90px;
+    right: 0;
+    display: block;
+    width: 75px;
+    font-size: 15px;
+    color: #7d7d7d;}
+.group-newnews .link-all::after{position: absolute;
+    top: 0;
+    right: 0;
+    content: '';
+    width: 75px;
+    height: 20px;
+    background-position: 0 -259px;}    
+
+.group-newnews .group-news {
+    display: flex;
+    justify-content: space-between;    
+    flex-wrap: wrap;
+}
+.group-newnews .sc-news {
+    width: 273px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.group-newnews .sc-news.front {
+    margin-left: 0;
+}
+.group-newnews .sc-news.mid {
+    margin-left: 20px;
+}
+.group-newnews .sc-news .news-area {
+    display: block;
+    width: 100%;
+}
+.group-newnews .sc-news .news-img {
+    width: 100%;
+    height: 188px;
+    position: relative;
+    margin-bottom: 15px;
+}
+.group-newnews .sc-news .news-area img {
+    width: auto;
+    min-width: 273px;
+    height: 188px;
+    transform: scale(1.0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.group-newnews .news-img .news-title {
+    position: absolute;
+    top: 156px;
+    content: '';
+    display: block;
+    width: 82px;
+    height: 32px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 32px;
+    z-index: 11;
+}
+.group-newnews .news-img .news-title.eco {
+    background-color: #599100;
+}
+.group-newnews .news-img .news-title.traf {
+    background-color: #337ee2; 
+}
+.group-newnews .news-img .news-title.admin {
+    background-color: #028ab6;
+}
+.group-newnews .news-img .news-title.welf {
+    background-color: #d76000;
+}
+.group-newnews .news-info {
+    font-size: 16px;
+    width: 100%;
+    height: 3em;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: normal;
+    color: #222;
+    word-break: keep-all;
+}
+
+
+/* 서울전체 */
+
+.group-seoul{
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    /*sc-move에 bt로 border-bottom: 2px solid #222; */}
+
+/* 서울영상 */
+.sc-video .h2-title{
+    padding-bottom: 11px;
+}
+.sc-video {
+}
+.sc-video .video-img {
+    width: 280px;
+    height: 152px;
+    position: relative;
+}
+.sc-video .video-img a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.sc-video .video-img img{width: 100%;
+    height: 100%;
+    transform: scale(1.0);
+    transition: transform 0.3s ease-in-out;}
+.sc-video .video-txt {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: rgba(0,0,0,.5);
+    padding: 11px 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 서울소식 */
+.sc-notice .h2-title {
+    padding-bottom: 11px;
+    
+}
+.sc-notice .notice-list {
+    width: 480px;
+}
+.sc-notice .notice-item {
+    padding: 11px 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    color: #555555;
+}
+.sc-notice .notice-item .type {
+    font-size: 16px;
+    font-weight: 400;
+    color: #09ac43;
+    margin-right: 18px;
+}
+.sc-notice .notice-item .text{color: #555;}
+
+/* 서울sns */
+.group-seoul .sc-sns {
+    position: relative;
+    width: 350px;
+    height: 195px;
+    background: url(../image/sns-bg.jpg) no-repeat 0 0;
+}
+.sc-sns .sns-bgimg {
+    padding: 10px 15px;
+    width: 100%;
+}
+.sc-sns .h2-title {
+    line-height: 30px;
+    display: inline-block;
+    position: relative;
+    padding-right: 50px;
+    color: #222;
+    font-size: 22px;
+    font-weight: 600;
+}
+.sc-sns .sns-title::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 52%;
+    display: inline-block;
+    width: 34px;
+    height: 24px;
+    background-position: -247px 0;
+    border-left: 1px solid #878787;
+    padding-right: 6px;
+}
+.sc-sns .sns-list {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    width: 276px;
+    height: 40px;
+    margin-left: -138px;
+    display: flex;
+    justify-content: space-between;
+}
+.sc-sns .sns-item {
+}
+.sc-sns .sns-item .link-sns1 {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+.sc-sns .sns-item .link-sns1::after {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: '';
+}
+.sc-sns .sns-item .link-sns1.insta::after {
+    background-position: 0 0;
+}
+.sc-sns .sns-item .link-sns1.face::after {
+    background-position: -40px 0;
+}
+.sc-sns .sns-item .link-sns1.twit::after {
+    background-position: -80px 0;
+}
+.sc-sns .sns-item .link-sns1.blog::after {
+    background-position: -120px 0;
+}
+.sc-sns .sns-item .link-sns1.yout::after {
+    background-position: -160px 0;
+}
+.sc-sns .sns-item .link-sns1.kakao::after {
+    background-position:-200px 0;
+}
+
+
+/* 무브배너 */
+.sc-move {
+    position: relative;
+    padding: 50px 0;
+    border-top: 2px solid #222;
+    box-sizing: border-box;
+}
+
+.swiper-container.move-container{display: block;
+    box-sizing: border-box;
+    overflow: hidden;}
+
+.swiper-wrapper{
+    display: flex;
+    max-width: 1151px;
+}
+
+.swiper-slide{
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    width: 355px;
+    margin-right: 43px;
+
+}    
+
+/* 버튼 */
+.sc-move .move-btn {
+    position: relative;
+    width: 100%;
+    height: 32px;
+    margin-top: 5px;
+}
+.sc-move .btn-num {
+    position: absolute;
+    width: auto;
+    right: 65px;
+    bottom: auto;
+    font-size: 14px;
+    line-height: 32px;
+    text-align: right;
+
+}
+
+.sc-move .btn-nav {
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+
+}
+
+.sc-move .btn-nav.prev {
+    right: 38px;
+    background-position: -45px -43px;
+}
+
+.sc-move .btn-nav.next {
+    right: 0;
+    background-position:  -86px -43px;
+
+}
+
+.sc-move .btn-nav.pause {
+    right: 19px;
+    background-position: -101px -43px;
+}
+
+
+/* 탭 */
+.group-tab {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.sc-tab {
+    width: 33.3333%;
+    border: 1px solid #d0d0d0;
+    border-left: none;
+    box-sizing: border-box;
+}
+
+.sc-tab.office{border-left: 1px solid #d0d0d0;}
+
+.sc-tab .btn-more {
+    display: block;
+    width: 100%;
+    padding: 16px 0;
+    background: #f7f7f7;
+    color: #333;
+    text-align: center;
+}
+
+.sc-tab .btn-more .btn-txt {
+    display: inline-block;
+    position: relative;
+    padding-right: 20px;
+    font-size: 14px;
+}
+
+.sc-tab .btn-more .btn-txt::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 0px;
+    height: 7px;
+    width: 7px;
+    border-style: solid;
+    border-color: #373737;
+    border-width: 0px 2px 2px 0px;
+    transform: rotate(-135deg);
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform-origin: center center;
+}
+
+
+
+.sc-tab .tab-list {
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px 20px;
+    border: 1px solid #d0d0d0;
+    background: #fff;
+    box-sizing: border-box;
+    z-index: 10;
+
+    /* display: flex; */ /* 닫기 */
+    flex-wrap: wrap;
+}
+.sc-tab .tab-list::after {
+    clear: both;
+    display: block;
+    content: '';
+}
+.sc-tab .tab-item {
+    width: 25%;
+    margin-top: 10px;
+    color: #555555;}
+
+
+
+
+
+
+
+
+
+
+
+
+

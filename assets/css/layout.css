@@ -1,0 +1,237 @@
+/* 큰 틀 레이아웃 */
+
+@import './reset.css';
+@import './common.css';
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+/* header */
+.header{}
+
+/* 상단 */
+.header-top{display: flex; justify-content: space-between;}
+.top-left{display: flex;}
+.top-left .top-logo{width: 97.5px; height: 18.5px;
+    padding: 0; margin-top: 8px;}
+.top-left .top-logo a{display: block;
+    width: 105px; height: 27px;
+    background-position: -5px -165px;}
+
+.top-left .menu-list{display: flex;}
+.top-left .menu-item+.menu-item{margin-left: 20px;}
+.top-left .menu-item:first-child{padding-left: 40px;
+            margin-left: 30px;}
+.top-left .menu-item a{font-size: 16px; height: 48px; line-height: 48px; font-weight: 700;}
+
+.top-right{}
+.top-right .service-list{display: flex;}
+.top-right .service-item{padding: 0 10px; margin: 0;}
+.top-right .service-item a{display: block; font-size: 14px; height: 48px; line-height: 48px; font-weight: 700;}
+
+/* 하단 */
+.header-bottom{display: flex; justify-content: space-between; position: relative;}
+.header-bottom .bottom-logo{background-position: 0 0;
+margin: 38px 0 30px; width: 178px; height: 51px;}
+.header-bottom .bottom-logo a{display: inline-block;}
+
+.search-area{display: flex;
+    width: 460px; height: 42px;
+    border: 3px solid #2292e9;
+    position: absolute;
+    left: 50%; top: 40px;
+    margin-left: -245px;
+    margin-top: 0;
+    border-style: border-box;
+}
+.search-area .input-text{flex: 1;
+border: 0; padding: 0 10px; 
+height: 38px; line-height: 38px;
+font-size: 16px;
+font-family: 'Nanum Gothic', sans-serif;
+color: #767676;}
+.search-area .btn-keybord{margin-left: 3px;
+vertical-align: middle;
+cursor: pointer;
+position: absolute;
+top: 12px; right: 42px;}
+.search-area .btn-search{background-position: -32px -97px;
+display: inline-block; width: 36px; height: 36px;
+padding: 0;
+vertical-align: middle;
+box-sizing: border-box;}
+
+.trans-area{display: flex;
+    width: 110px; height: 21px;
+    position: absolute; right: 0; top: 0;}
+.trans-area .select-trans{
+    width: 80px;
+    height: 21px;
+    border-color: #afcfea;
+    color: #1E6CB3;
+    font-size: 12px;
+    padding: 0 0 0 2px;
+    box-sizing: border-box;
+    line-height: 21px;
+    appearance: none;
+    border-radius: 0;
+    background: url(../image/transbtn.png) no-repeat no-repeat 96% center;
+    background-size: 8px auto;
+}
+
+.trans-area .select-trans option{font-weight: normal;
+    display: block;
+    white-space: nowrap;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;}
+.trans-area .btn-trans{width: 30px;
+    font-size: 11px;
+    color: #fff;
+    background-color: #1E6CB3;
+    border: 0;
+    height: 21px;
+    /* margin-left: -1px; */
+    display: inline-block;
+    padding: 0;}
+
+.weather-area{display: flex;
+    width: 260px;
+    height: 85px;
+    margin-top: 34px;
+    vertical-align: top;
+}
+.weather-icon{
+    vertical-align: top;
+    margin-top: 4px;
+    margin-left: 3px;}
+.weather-list{max-width: 242px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.weather-list .weather-top{display: block;
+ /*    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    text-decoration: none;
+    color: #222; */}
+.weather-list .weather-bottom{display: block;
+    margin-top: 7px;
+   /*  text-align: left;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    text-decoration: none;
+    color: #222; */}
+.weather-list .weather-top .temp{font-size: 25px;
+    margin-right: 5px;
+    font-weight: bold;}
+.weather-list .weather-top .condition{font-size: 16px;
+    letter-spacing: -0.1em;}
+.weather-list .weather-bottom .dust{font-size: 13px;
+    letter-spacing: -1px;}
+
+
+
+/* container */
+.container{}
+/* 하늘색코로나 */
+.sc-covid{margin-top: 35px; background: #eff4f8;}
+
+
+
+/* footer */
+.footer{}
+/* 상단 */
+.footer-top{ position: relative; 
+    display: flex; justify-content: space-between;
+    padding: 15px 0;
+}
+/* 왼쪽 */
+.footer-top .help-area{}
+.footer-top .help-list{display: flex;}
+.footer-top .help-item{padding: 0 10px; position: relative;}
+.footer-top .help-item:first-child{padding-left: 0;}
+.footer-top .help-item::before{content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 1px;
+    height: 14px;
+    margin-top: -6px;
+    background: #dcdcdc;}
+.footer-top .help-item a{font-size: 12px; color: #636363;}
+.footer-top .help-item.bold{color: #000; font-weight: 700;}
+
+/* 오른쪽 */
+.footer-top .sns-area{position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -14px;
+    overflow: hidden;
+    font-size: 0;
+    text-align: center;
+display: flex;}
+.footer-top .link-sns2{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    text-indent: -9999em;}
+.footer-top .link-sns2+.link-sns2{margin-left: 12px;}   
+.footer-top .link-sns2.face{background-position: -25px 0; }
+.footer-top .link-sns2.twit{background-position: -50px 0;}
+.footer-top .link-sns2.insta{background-position: -75px 0; }
+.footer-top .link-sns2.kakao{background-position: -100px 0;}
+.footer-top .link-sns2.yout{background-position: -125px 0;}
+.footer-top .link-sns2.blog{background-position: -150px 0;}
+
+/* 하단 */
+.footer-bottom{border-top: 1px solid #d0d0d0;
+    padding: 22px 0;
+    text-align: left;
+    display: flex; justify-content: space-between;
+}
+.footer-bottom .bottom-left{display: flex;}
+
+/* 다산 */
+.footer-bottom .call{margin-right: 40px;
+    width: 108px;
+    height: 45px;
+    background-position: -180px 0;}
+
+/* 왼쪽 */
+.footer-bottom .addr-area{/* display: inline-block; */
+    vertical-align: top;}
+.footer-bottom .addr-area p{font-weight: 500; color: #636363;
+padding-bottom: 2px;
+font-size: 12px;
+margin-bottom: 0;}
+.footer-bottom .addr-area .addrcome{font-size: 11px; font-weight: 400; color: #636363;}
+
+/* 오른쪽 */
+.footer-bottom .bottom-right{
+    padding: 0;
+    background: none;}
+.footer-bottom .bottom-right .mark1{}
+.footer-bottom .bottom-right .mark2{margin-left: 10px;}
+
+/* 이동버튼 */
+.front-btn {
+    bottom: 100px;
+    position: fixed;
+    right: 50px;
+    margin-left: 600px;
+    opacity: 1;
+}
+.front-img {
+    width: 34px;
+    height: 34px;
+    display: inline-block;
+
+}
+
+

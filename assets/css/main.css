@@ -1,78 +1,51 @@
 
 /* 메인슬라이드+배너3 */
-.group-main{display: flex; justify-content: space-between;
-overflow: hidden;}
+.group-main{display: flex; justify-content: space-between;}
 
 /* 메인슬라이드 */
 .sc-visual {
     width: 770px;
-    position: relative;
+    position: relative; 
 }
 
-/* 주요뉴스/시민참여 전체 */
+/* 주요뉴스/시민참여 공통 전체 */
 .sc-visual .group-visual {
-
-    margin: 0 0 0 80px;
+    position: absolute; 
+    right: 0; 
+    width: 690px; 
+    height: 100%;
 }
 
-/* 왼쪽 버튼 */
-.sc-visual .group-visual .visual-area {
+/* 주요뉴스/시민참여 공통 버튼 */
+.sc-visual .visual-area{
     position: absolute;
     top: 0;
-    left: 0;
+    left: -80px; 
+    height: 50%; 
     width: 80px;
-    height: 175px;
-    font-weight: 700;
-}
-
-/* 하늘색(기본) */
-.sc-visual .visual-title {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding-top: 110px;
     background-color: #d2e1e9;
     color: #333;
     font-weight: 600;
     text-align: center;
-    box-sizing: border-box;
 }
 
-/* 파란색(Active) */
-.sc-visual .visual-title.active {
-    background-color: #0158a8;
-    color: #fff;
-}
-.sc-visual .visual-title.active::after {
-    content: " ";
-    position: absolute;
-    z-index: 10;
-    left: 99%;
-    top: 50%;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 25px 0 25px 32px;
-    border-color: transparent transparent transparent #0158a8;
-    margin-top: -25px;
-}
-
-
+/* 주요뉴스 위치 */
+.sc-visual .visual-news .visual-area{top: 0;}
 /* 주요뉴스 로고 */
-.sc-visual .group-visual .impnws::before {
+.sc-visual .visual-news .visual-area::before {
     content: '';
     display: block;
     width: 50px;
     height: 50px;
     background-color: #fff;
     border-radius: 50%;
-    margin: 0 auto 10px;
-    top: 50px; left: 50%; transform: translateX(-50%);/* 위치임의조정 */ 
+    margin: 50px auto 10px;
 }
 
+/* 시민참여 위치 */
+.sc-visual .visual-citizen .visual-area{top: 50%;}
 /* 시민참여 로고 */
-.sc-visual .group-visual .citizen::before {
+.sc-visual .visual-citizen .visual-area::before {
     content: '';
     display: block;
     width: 50px;
@@ -80,50 +53,11 @@ overflow: hidden;}
     background-position: -50px 0px;
     background-color: #fff;
     border-radius: 50%;
-    margin: 0 auto 10px;
-    position: absolute;
-    top: 50px; left: 50%; transform: translateX(-50%);/* 위치임의조정 */ 
+    margin: 50px auto 10px;
 }
 
-/* 메인화면 */
-.sc-visual .swiper-container{display: none;
-    position: absolute;
-    top: 0;
-    left: 80px;}
-.sc-visual .swiper-container.active{display: block;}
 
-.sc-visual .swiper-wrapper{display: flex; 
-    max-width: 100%;
-    width: 7215%;
-    height: 350px;
-    position: relative;
-    box-sizing: content-box;}
-
-.sc-visual .swiper-container .swiper-slide {
-    display: flex;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 690px;
-    background: #fff;
-}
-
-/* 이미지+하단 */
-.sc-visual .swiper-slide .main-img{
-    display: block;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-
-}
-
-.sc-visual .swiper-slide img{
-    min-width: 100%;
-    display: block;
-
-}
-
+/* 하단p */
 .sc-visual .main-txt {
     position: absolute;
     left: 0;
@@ -147,10 +81,12 @@ overflow: hidden;}
 .sc-visual .move-btn {
     position: absolute;
     right: 3px;
-    bottom: 4px;
+    bottom: 3px;
     width: 110px;
     height: 32px;
     color: #fff;
+    z-index: 1;
+    display: flex;
 } 
 .sc-visual .move-btn::before {
     content: "";
@@ -160,67 +96,83 @@ overflow: hidden;}
     width: 1px;
     height: 24px;
     background: rgba(255,255,255,.5);
+    z-index: 2;
 }
 
 /* 숫자 */
-.sc-visual .btn-num{position: absolute;
-    right: 80px;
+.sc-visual .move-btn .fraction{position: absolute;
     top: 50%;
-    width: auto;
+    bottom: auto;
+    left: auto;
+    right: 80px;
     transform: translateY(-50%);
-    overflow: hidden;
-    text-align: right;}
-.sc-visual .btn-num .count{color: #fff;
-    letter-spacing: 0;
-    font-size: 13px;}
-.sc-visual .btn-num .total{color: #fff;
-    letter-spacing: 0;
-    font-size: 13px;}
+    width: auto;
+    font-size: 13px;
+    color: #fff;
+    }
 
 /* 버튼 */
 
-.sc-visual .group-visual .btn-nav{
-   position: absolute;
-    bottom: 11px;
-    width: 18px;
-    height: 18px;
-    margin-top: 0;
-    z-index: 10;
-    cursor: pointer;
-    display: block;
-    color: transparent;
-    opacity: 1;
-    top: 50%;
-}
-
-
-.sc-visual .btn-nav.prev {
-    left: 49px;
-    background-position: -241px -285px;
-}
-
-
-.sc-visual .btn-nav.pause {
-    background-position: -269px -285px;
+.sc-visual .btn-nav{
+    width: 15px;
+    height: 15px;
+    margin: 0;
     position: absolute;
-    top: 50%;
-    left: auto;
-    right: 22px;
+    top: 7px;
+}
+
+.sc-visual .group-visual .btn-nav.prev{
+    left: 49px;
+    background-position:  -241px -285px;
+}
+.sc-visual .group-visual .btn-nav.autoplay {
+    right: 24px;
+    background-position: -285px -285px;
+    z-index: 10;}
+.sc-visual .group-visual .btn-nav.autoplay.active {
+    right: 24px;
+    z-index: 10;
+    background-position: -269px -285px;}
+
+.sc-visual .group-visual .btn-nav.next  {
+    right: 6px;
+    background-position: -256px -285px;
     z-index: 10;
 }
-.sc-visual .btn-nav.next {
-position: absolute;
-top: 50%;
-    right: 5px;
-    background-position: -256px -285px;
+
+
+/* active */
+.sc-visual .group-visual.active {
+      z-index: 2;
+  }
+.sc-visual .group-visual.active .visual-area{
+    background-color: #0158a8;
+    color: #fff;
 }
+.sc-visual .group-visual.active .visual-area::after{
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 97%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 25px 0 25px 32px;
+    border-color: transparent transparent transparent #0158a8;
+  }
 
 
-/* 배너3 */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* 배너3개 */
 .group-banner{width: 360px;
     height: 350px;
     position: relative;}
-.sc-banner{    }
+.sc-banner{ }
+
+/* 코로나 */
 .sc-banner.covid{position: relative;
     width: 100%;
     height: 98px;
@@ -269,7 +221,6 @@ top: 50%;
     }
 .sc-banner.covid .bnr-covid .covid-num{display: block;
     font-size: 17px;
-    margin-top: 2px;
     color: #fff;
     font-weight: 700;
     letter-spacing: -0.075em;}
@@ -306,6 +257,8 @@ top: 50%;
 .sc-banner.mayor .mayor-link .link2 img{}
 
 
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
 /* 주요서비스 */
 .sc-service {
     padding-top: 50px;
@@ -316,6 +269,7 @@ top: 50%;
     padding-bottom: 10px;
     border-bottom: 1px solid #dbdbdb;
 }
+
 /* 버튼 */
 .sc-service .link-zip {
     width: 112px;
@@ -340,31 +294,34 @@ top: 50%;
     display: flex;
     justify-content: space-between;
 }
-.sc-service .sort-list .sort-item .sort-txt::before{content: '';
+.sc-service .sort-list a::before{content: '';
     display: block;
     width: 60px;
     height: 60px;
     margin: 0 auto 10px;}
-.sc-service .sort-list .reserv .sort-txt::before{background-position: -360px 0;}
-.sc-service .sort-list .respon .sort-txt::before{background-position: 0 0;}
-.sc-service .sort-list .job .sort-txt::before{background-position: -120px 0;}
-.sc-service .sort-list .estate .sort-txt::before{background-position: -300px 0;}
-.sc-service .sort-list .life .sort-txt::before{background-position: -180px 0;}
-.sc-service .sort-list .welf .sort-txt::before{background-position: -960px 0;}
-.sc-service .sort-list .house .sort-txt::before{background-position: -780px 0;}
-.sc-service .sort-list .youth .sort-txt::before{background-position: -1140px 0;}
-.sc-service .sort-list .hand .sort-txt::before{background-position: -1020px 0;}
-.sc-service .sort-list .democr .sort-txt::before{background-position: -60px 0;}
-.sc-service .sort-list .city .sort-txt::before{background-position: -600px 0;}
+
+/* 아이콘 */
+.sc-service .sort-item .ic-reserv::before{background-position: -360px 0;}
+.sc-service .sort-item .ic-respon::before{background-position: 0 0;}
+.sc-service .sort-item .ic-job::before{background-position: -120px 0;}
+.sc-service .sort-item .ic-estate::before{background-position: -300px 0;}
+.sc-service .sort-item .ic-life::before{background-position: -180px 0;}
+.sc-service .sort-item .ic-welf::before{background-position: -960px 0;}
+.sc-service .sort-item .ic-house::before{background-position: -780px 0;}
+.sc-service .sort-item .ic-youth::before{background-position: -1140px 0;}
+.sc-service .sort-item .ic-hand::before{background-position: -1020px 0;}
+.sc-service .sort-item .ic-democr::before{background-position: -60px 0;}
+.sc-service .sort-item .ic-city::before{background-position: -600px 0;}
 
 
-/* 코로나 */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* 하늘색 코로나 */
 .sc-covid {
     margin-top: 35px;
     background: #eff4f8;
 }
 .sc-covid .covid-list {
-    /* overflow: hidden; */
     display: flex;
     justify-content: space-between;
 }
@@ -390,7 +347,9 @@ top: 50%;
 .sc-covid .covid-img img{width: 288px;height: 70px;}
 
 
-/* 이벤트 */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* 이벤트 + 행사 */
 .group-detail {
     padding: 50px 0 50px;
     border-bottom: 2px solid #222222;
@@ -452,7 +411,6 @@ position: relative;}
 }
 
 
-
 /* 자주찾은 서비스 */
 .sc-often .h2-title {
     margin-bottom: 0; border-bottom: 0;
@@ -491,6 +449,8 @@ position: relative;}
 }
 
 
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
 /* 분야별 정보 */
 .sc-info {
     height: 145px;
@@ -517,6 +477,8 @@ position: relative;}
     width: 85px;
     height: 85px;
 }
+
+/* 로고 */
 .sc-info .info-item.hous::before {
     background: url(../image/icon-info1.png) no-repeat;
 }
@@ -553,57 +515,62 @@ position: relative;}
 }
 
 
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
 /* 새소식 */
-.group-newnews {
+.sc-new {
     padding: 20px 0 30px;
     position: relative;
     clear: both;
 }
-.group-newnews .h2-title {
+.sc-new .h2-title {
     padding: 60px 0 30px; /* 위치임의지정 */
 }
-.group-newnews .link-all{ position: absolute;
+
+/* 전체보기 */
+.sc-new .link-all{ position: absolute;
     top: 90px;
     right: 0;
     display: block;
     width: 75px;
     font-size: 15px;
     color: #7d7d7d;}
-.group-newnews .link-all::after{position: absolute;
-    top: 0;
+.sc-new .link-all::after{position: absolute;
+    top: -3px;
     right: 0;
     content: '';
     width: 75px;
     height: 20px;
     background-position: 0 -259px;}    
 
-.group-newnews .group-news {
+/* 8개 */
+.sc-new .new-list {
     display: flex;
     justify-content: space-between;    
     flex-wrap: wrap;
 }
-.group-newnews .sc-news {
+.sc-new .new-item {
     width: 273px;
     position: relative;
     margin-bottom: 20px;
 }
-.group-newnews .sc-news.front {
+.sc-new .new-item.front {
     margin-left: 0;
 }
-.group-newnews .sc-news.mid {
+.sc-new .new-item.mid {
     margin-left: 20px;
 }
-.group-newnews .sc-news .news-area {
+.sc-new .new-item .news-area {
     display: block;
     width: 100%;
 }
-.group-newnews .sc-news .news-img {
+.sc-new .new-item .news-img {
     width: 100%;
     height: 188px;
     position: relative;
     margin-bottom: 15px;
 }
-.group-newnews .sc-news .news-area img {
+.sc-new .new-item .news-area img {
     width: auto;
     min-width: 273px;
     height: 188px;
@@ -611,7 +578,7 @@ position: relative;}
     transition: transform 0.3s ease-in-out;
 }
 
-.group-newnews .news-img .news-title {
+.sc-new .news-img .news-title {
     position: absolute;
     top: 156px;
     content: '';
@@ -625,19 +592,19 @@ position: relative;}
     line-height: 32px;
     z-index: 11;
 }
-.group-newnews .news-img .news-title.eco {
+.sc-new .news-img .news-title.eco {
     background-color: #599100;
 }
-.group-newnews .news-img .news-title.traf {
+.sc-new .news-img .news-title.traf {
     background-color: #337ee2; 
 }
-.group-newnews .news-img .news-title.admin {
+.sc-new .news-img .news-title.admin {
     background-color: #028ab6;
 }
-.group-newnews .news-img .news-title.welf {
+.sc-new .news-img .news-title.welf {
     background-color: #d76000;
 }
-.group-newnews .news-info {
+.sc-new .news-txt {
     font-size: 16px;
     width: 100%;
     height: 3em;
@@ -652,19 +619,19 @@ position: relative;}
 }
 
 
-/* 서울전체 */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
+/* 서울전체 */
 .group-seoul{
     padding-bottom: 50px;
     display: flex;
     justify-content: space-between;
-    /*sc-move에 bt로 border-bottom: 2px solid #222; */}
+    border-bottom: 2px solid #222;
+    }
 
 /* 서울영상 */
 .sc-video .h2-title{
     padding-bottom: 11px;
-}
-.sc-video {
 }
 .sc-video .video-img {
     width: 280px;
@@ -700,6 +667,7 @@ position: relative;}
 }
 
 /* 서울소식 */
+.sc-notice{margin-left: 10px;}
 .sc-notice .h2-title {
     padding-bottom: 11px;
     
@@ -766,15 +734,14 @@ position: relative;}
     display: flex;
     justify-content: space-between;
 }
-.sc-sns .sns-item {
-}
-.sc-sns .sns-item .link-sns1 {
+
+.sc-sns .sns-list .link-sns1 {
     display: block;
     width: 40px;
     height: 40px;
     position: relative;
 }
-.sc-sns .sns-item .link-sns1::after {
+.sc-sns .sns-list .link-sns1::after {
     position:absolute;
     width: 100%;
     height: 100%;
@@ -782,117 +749,100 @@ position: relative;}
     left: 0;
     content: '';
 }
-.sc-sns .sns-item .link-sns1.insta::after {
+
+/* 아이콘 */
+.sc-sns .sns-list .link-sns1.insta::after {
     background-position: 0 0;
 }
-.sc-sns .sns-item .link-sns1.face::after {
+.sc-sns .sns-list .link-sns1.face::after {
     background-position: -40px 0;
 }
-.sc-sns .sns-item .link-sns1.twit::after {
+.sc-sns .sns-list .link-sns1.twit::after {
     background-position: -80px 0;
 }
-.sc-sns .sns-item .link-sns1.blog::after {
+.sc-sns .sns-list .link-sns1.blog::after {
     background-position: -120px 0;
 }
-.sc-sns .sns-item .link-sns1.yout::after {
+.sc-sns .sns-list .link-sns1.yout::after {
     background-position: -160px 0;
 }
-.sc-sns .sns-item .link-sns1.kakao::after {
+.sc-sns .sns-list .link-sns1.kakao::after {
     background-position:-200px 0;
 }
 
 
-/* 무브배너 */
-.sc-move {
-    position: relative;
-    padding: 50px 0;
-    border-top: 2px solid #222;
-    box-sizing: border-box;
-}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
-.swiper-container.move-container{display: block;
-    box-sizing: border-box;
-    overflow: hidden;}
+/* 배너 */
+.sc-move{position: relative; padding: 50px 0; box-sizing: border-box;}
+.sc-move .swiper-slide a{display: block;}
 
-.swiper-wrapper{
-    display: flex;
-    max-width: 1151px;
-}
-
-.swiper-slide{
-    flex-shrink: 0;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transition-property: transform;
-    width: 355px;
-    margin-right: 43px;
-
-}    
-
-/* 버튼 */
-.sc-move .move-btn {
-    position: relative;
-    width: 100%;
-    height: 32px;
+/* 버튼전체 */
+.sc-move .move-btn{display: flex; justify-content: flex-end;
     margin-top: 5px;
-}
-.sc-move .btn-num {
-    position: absolute;
+    height: 32px;
+    width: 100%;
+    position: relative;
+    z-index: 1;}
+
+/* 숫자 */
+.sc-move .fraction{
     width: auto;
     right: 65px;
     bottom: auto;
     font-size: 14px;
     line-height: 32px;
     text-align: right;
-
+    margin-right: 10px;
 }
 
+/* 버튼 */
 .sc-move .btn-nav {
-    transform: translateY(-50%);
     width: 20px;
     height: 20px;
     border: 1px solid #999;
     box-sizing: border-box;
-    position: absolute;
-    top: 50%;
-
+    margin-top: 5px;
 }
-
 .sc-move .btn-nav.prev {
-    right: 38px;
     background-position: -45px -43px;
+    z-index: 10;
 }
-
 .sc-move .btn-nav.next {
-    right: 0;
     background-position:  -86px -43px;
-
+    z-index: 10;
 }
-
-.sc-move .btn-nav.pause {
-    right: 19px;
+.sc-move .btn-nav.autoplay  {
+    background-position: -65px -43px;
+    z-index: 10;
+}
+.sc-move .btn-nav.autoplay.active{
     background-position: -101px -43px;
 }
 
 
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
 /* 탭 */
-.group-tab {
-    position: relative;
-    margin-bottom: 20px;
+.sc-related{}
+.sc-related .related-list{
     display: flex;
-    justify-content: space-between;
-}
-.sc-tab {
-    width: 33.3333%;
+    position: relative;
+    background: #d0d0d0;
+    margin-bottom: 20px;
     border: 1px solid #d0d0d0;
-    border-left: none;
+}
+.sc-related .related-list .related-item{
+    width: 100%;
+    background: #f7f7f7;
+    color: #333;
+    text-align: center;
     box-sizing: border-box;
 }
+.sc-related .related-list .related-item+.related-item{border-left: 1px solid #d0d0d0;}
 
-.sc-tab.office{border-left: 1px solid #d0d0d0;}
-
-.sc-tab .btn-more {
+/* 버튼 */
+.sc-related .related-list .btn-more{
     display: block;
     width: 100%;
     padding: 16px 0;
@@ -900,18 +850,18 @@ position: relative;}
     color: #333;
     text-align: center;
 }
-
-.sc-tab .btn-more .btn-txt {
-    display: inline-block;
-    position: relative;
-    padding-right: 20px;
-    font-size: 14px;
+.sc-related .related-list .btn-more.active{
+    background: #d0d0d0;
 }
 
-.sc-tab .btn-more .btn-txt::after {
+.sc-related .related-list .btn-more .btn-txt{
+    position: relative;
+    padding-right: 20px;
+    font-size: 14px;}
+.sc-related .related-list .btn-more .btn-txt::after{
     content: '';
     position: absolute;
-    top: 8px;
+    top: 6px;
     right: 0px;
     height: 7px;
     width: 7px;
@@ -922,43 +872,31 @@ position: relative;}
     transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
     transform-origin: center center;
 }
+.sc-related .related-list .btn-more.active .btn-txt::after{
+    top: 2px;
+    transform: rotate(45deg);
+}
 
-
-
-.sc-tab .tab-list {
+/* 열었을때 */
+.sc-related .tab-area{
     display: none;
     position: absolute;
-    bottom: 50px;
+    bottom: 47px;
     left: 0;
     width: 100%;
     padding: 10px 20px 20px;
-    border: 1px solid #d0d0d0;
     background: #fff;
+    border: 1px solid #d0d0d0;
     box-sizing: border-box;
     z-index: 10;
-
-    /* display: flex; */ /* 닫기 */
+}
+.sc-related .tab-area .tab-list{
+    display: flex;
     flex-wrap: wrap;
 }
-.sc-tab .tab-list::after {
-    clear: both;
-    display: block;
-    content: '';
-}
-.sc-tab .tab-item {
-    width: 25%;
+.sc-related .tab-area .tab-list .tab-item{
+    width: calc(100% / 3);
     margin-top: 10px;
-    color: #555555;}
-
-
-
-
-
-
-
-
-
-
-
-
-
+    color: #555555;
+    text-align: left;
+}

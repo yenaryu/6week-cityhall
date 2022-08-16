@@ -21,11 +21,6 @@ body{font-size: 14px;
 
 .h2-title{font-size: 24px; font-weight: 700;}
 
-/* .swiper-container{}    
-.swiper-wrapper{}
-.swiper-slide{} */
-
-
 
 /* iseoulu */
 .header-bottom .bottom-logo
@@ -38,38 +33,46 @@ background-repeat: no-repeat;}
 .footer-bottom .call,
 .event-group .link-more,
 .sc-visual .group-visual .btn-nav.prev,
-.sc-visual .group-visual .btn-nav.pause,
+.sc-visual .group-visual .btn-nav.autoplay,
+.sc-visual .group-visual .btn-nav.autoplay.active,
 .sc-visual .group-visual .btn-nav.next,
-.group-newnews .link-all::after,
 .sc-move .btn-nav.prev,
 .sc-move .btn-nav.next,
-.sc-move .btn-nav.pause
-{background-image: url(../image/icon-common.png); 
+.sc-move .btn-nav.autoplay,
+.sc-move .btn-nav.autoplay.active,
+.sc-new .link-all::after
+{background-image: url(../image/download.png); 
 background-repeat: no-repeat;}
 
 /* 주요뉴스 시민참여 */
-.sc-visual .group-visual .visual-title::before
+.sc-visual .visual-news .visual-area::before,
+.sc-visual .visual-citizen .visual-area::before
 {background-image: url(../image/icon-main.png); 
 background-repeat: no-repeat;}
 
 /* 주요서비스 */
-.sc-service .sort-list .reserv .sort-txt::before,
-.sc-service .sort-list .respon .sort-txt::before,
-.sc-service .sort-list .job .sort-txt::before,
-.sc-service .sort-list .estate .sort-txt::before,
-.sc-service .sort-list .life .sort-txt::before,
-.sc-service .sort-list .welf .sort-txt::before,
-.sc-service .sort-list .house .sort-txt::before,
-.sc-service .sort-list .youth .sort-txt::before,
-.sc-service .sort-list .hand .sort-txt::before,
-.sc-service .sort-list .democr .sort-txt::before,
-.sc-service .sort-list .city .sort-txt::before
+.sc-service .sort-list .ic-reserv::before,
+.sc-service .sort-list .ic-respon::before,
+.sc-service .sort-list .ic-job::before,
+.sc-service .sort-list .ic-estate::before,
+.sc-service .sort-list .ic-life::before,
+.sc-service .sort-list .ic-welf::before,
+.sc-service .sort-list .ic-house::before,
+.sc-service .sort-list .ic-youth::before,
+.sc-service .sort-list .ic-hand::before,
+.sc-service .sort-list .ic-democr::before,
+.sc-service .sort-list .ic-city::before
 {background-image: url(../image/icon-service.png); 
 background-repeat: no-repeat;}
 
 /* 서울로고 sns로고들 */
 .sc-sns .sns-title::after,
-.sc-sns .sns-item .link-sns1::after
+.sc-sns .sns-list .link-sns1.insta::after,
+.sc-sns .sns-list .link-sns1.face::after,
+.sc-sns .sns-list .link-sns1.twit::after,
+.sc-sns .sns-list .link-sns1.blog::after,
+.sc-sns .sns-list .link-sns1.yout::after,
+.sc-sns .sns-list .link-sns1.kakao::after
 {background-image: url(../image/icon-sns1.png); 
 background-repeat: no-repeat;}
 
